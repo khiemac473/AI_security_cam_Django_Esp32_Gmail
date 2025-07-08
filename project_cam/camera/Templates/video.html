@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Stream</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body class="video-page">
+    <div class="user-info">
+        {% if user.is_authenticated %}
+            <p>Xin chào, <strong>{{ user.username }}</strong> ({{ user.email }})</p>
+            <a href="{% url 'logout' %}" class="btn">Đăng xuất</a>
+        {% else %}
+            <a href="{% url 'login' %}" class="btn">Đăng nhập</a>
+            <a href="{% url 'register' %}" class="btn">Đăng ký</a>
+        {% endif %}
+    </div>
+
+    <div class="video-container">
+        <h2>Video Streaming</h2>
+        <img src="{% url 'video_feed' %}" class="video-frame">
+    </div>
+</body>
+</html>

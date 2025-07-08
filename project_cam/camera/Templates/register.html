@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Đăng Ký</h2>
+        <form method="POST">
+            {% csrf_token %}
+            
+            <div class="input-container">
+                {{ form.username.label_tag }}
+                {{ form.username }}
+            </div>
+
+            <div class="input-container">
+                {{ form.email.label_tag }}
+                {{ form.email }}
+            </div>
+
+            <div class="input-container">
+                {{ form.password1.label_tag }}
+                {{ form.password1 }}
+            </div>
+
+            <div class="input-container">
+                {{ form.password2.label_tag }}
+                {{ form.password2 }}
+            </div>
+
+            <button type="submit">Đăng Ký</button>
+        </form>
+        <p>Đã có tài khoản? <a href="{% url 'login' %}">Đăng nhập</a></p>
+    </div>
+</body>
+
