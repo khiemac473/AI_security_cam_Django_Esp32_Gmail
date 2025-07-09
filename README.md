@@ -1,4 +1,4 @@
-# 🔐 AI Security Camera with ESP32 & Gmail Notification
+# AI Security Camera with ESP32 & Gmail Notification
 
 This project is an AI-powered security system using YOLOv11 for human detection, Django for backend and video streaming, and ESP32 for physical alerts. When a person is detected in the camera feed, the system sends real-time notifications via Gmail and activates connected devices (e.g., LEDs or buzzers) using ESP32.
 
